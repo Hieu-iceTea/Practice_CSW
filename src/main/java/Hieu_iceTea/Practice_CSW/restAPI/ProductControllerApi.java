@@ -59,7 +59,7 @@ public class ProductControllerApi {
 
 
     //region - Edit -
-    @PostMapping(path = {"/{id}", "/{id}/"})
+    @PutMapping(path = {"/{id}", "/{id}/"})
     public Product update(@RequestBody Product product) {
 
         return productService.save(product);

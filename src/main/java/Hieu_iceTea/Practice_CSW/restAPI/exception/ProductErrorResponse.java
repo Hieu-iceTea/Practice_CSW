@@ -1,4 +1,4 @@
-package Hieu_iceTea.Practice_CSW.controller.api.exception;
+package Hieu_iceTea.Practice_CSW.restAPI.exception;
 
 public class ProductErrorResponse {
 

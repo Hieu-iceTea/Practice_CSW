@@ -1,7 +1,7 @@
-package Hieu_iceTea.Practice_CSW.controller.api;
+package Hieu_iceTea.Practice_CSW.restAPI;
 
 
-import Hieu_iceTea.Practice_CSW.controller.api.exception.ProductNotFoundException;
+import Hieu_iceTea.Practice_CSW.restAPI.exception.ProductNotFoundException;
 import Hieu_iceTea.Practice_CSW.model.Product;
 import Hieu_iceTea.Practice_CSW.service.product.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

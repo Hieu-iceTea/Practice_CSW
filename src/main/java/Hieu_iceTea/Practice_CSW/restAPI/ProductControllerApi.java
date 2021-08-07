@@ -23,9 +23,9 @@ public class ProductControllerApi {
     //endregion
 
 
-    //region - Display -
+    //region - GET -
     @GetMapping(path = {"", "/", "/index"})
-    public List<Product> index(@RequestParam(required = false) String search) {
+    public List<Product> getAllProducts(@RequestParam(required = false) String search) {
 
         return productService.getAll(search);
 
@@ -48,7 +48,7 @@ public class ProductControllerApi {
 
     //region - Create -
     @PostMapping(path = {"", "/"})
-    public Product store(@RequestBody Product product) {
+    public Product addProduct(@RequestBody Product product) {
 
         product.setId(0);
 
@@ -80,6 +80,21 @@ public class ProductControllerApi {
         productService.deleteById(id);
 
         return "Deleted Product id - " + id;
+
+    }
+    //endregion
+
+
+    //region - Customer Buy Product -
+    @PostMapping(path = {"/buy/{id}/{qty}", "/buy/{id}/{qty}/"})
+    public String buyProduct(@PathVariable int id, @PathVariable int qty) {
+
+        Product product =  productService.findById(id);
+        product.setQuantity(product.getQuantity() - qty);
+
+        productService.save(product);
+
+        return "Buy Product id - " + id + ", with quantity - " + qty + "| quantity remaining in stock - " + product.getQuantity();
 
     }
     //endregion

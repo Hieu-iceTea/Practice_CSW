@@ -32,10 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                 // API:
-                .antMatchers(HttpMethod.GET, "/api/**").hasAnyRole("Staff", "Customer")
-                .antMatchers(HttpMethod.POST, "/api/**").hasAnyRole("Staff", "Customer")
-                .antMatchers(HttpMethod.PUT, "/api/**").hasAnyRole("Staff", "Customer")
-                .antMatchers(HttpMethod.DELETE, "/api/**").hasAnyRole("Staff", "Customer")
+                .antMatchers(HttpMethod.POST, "/api/products/buy/**").hasAnyRole("Customer")
+
+                .antMatchers(HttpMethod.GET, "/api/products/**").hasAnyRole("Staff", "Customer")
+                .antMatchers(HttpMethod.POST, "/api/products/**").hasAnyRole("Staff")
+                .antMatchers(HttpMethod.PUT, "/api/products/**").hasAnyRole("Staff")
+                .antMatchers(HttpMethod.DELETE, "/api/products/**").hasAnyRole("Staff")
+
 
                 /*.antMatchers(HttpMethod.GET, "/api/customers").hasAnyRole("Employee")
                 .antMatchers(HttpMethod.GET, "/api/customers/**").hasAnyRole("Employee")

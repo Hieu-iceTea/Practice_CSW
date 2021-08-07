@@ -13,8 +13,8 @@ public class Product extends BaseModel implements Serializable {
 
     //region - Define Fields -
     private String name;
-    private String price;
-    private String quantity;
+    private Double price;
+    private int quantity;
     //endregion
 
 
@@ -32,19 +32,19 @@ public class Product extends BaseModel implements Serializable {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
     //endregion
